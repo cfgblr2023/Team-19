@@ -18,3 +18,18 @@ export const createRoad=async(req,res,next)=>{
         next(err)
     }
 }
+
+
+// @desc Get damaged road
+// @route GET /api/roads
+// @acess public
+
+export const getAllRoads=async(req,res,next)=>{
+    try{
+       const allRoads=await Road.find()
+       res.status(200).json(allRoads)
+    }
+    catch(err){
+        next(err)
+    }
+}
