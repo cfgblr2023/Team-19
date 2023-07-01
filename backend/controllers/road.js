@@ -21,13 +21,27 @@ export const createRoad=async(req,res,next)=>{
 
 
 // @desc Get damaged road
-// @route GET /api/roads
-// @acess public
+// @route GET /api/road
+// @access public
 
 export const getAllRoads=async(req,res,next)=>{
     try{
        const allRoads=await Road.find()
        res.status(200).json(allRoads)
+    }
+    catch(err){
+        next(err)
+    }
+}
+
+// @desc delete damaged road
+// @route DELETE /api/road
+// @access private
+
+export const deleteRoad=async(req,res,next)=>{
+    try{
+         await Road.findByIdAndDelete(req.params.id)
+         res.status(200).json("Road has been deleted")
     }
     catch(err){
         next(err)
