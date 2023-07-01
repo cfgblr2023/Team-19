@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import './form.css';
 import formNav from "./form-nav";
 import Navbar from './form-nav';
+import axios from 'axios';
 
 const IssueForm = () => {
+   
+  const [data,setData]=useState({})
+
   const [wardNo, setWardNo] = useState('');
   const [issueType, setIssueType] = useState('');
   const [address, setAddress] = useState('');
   const [photo, setPhoto] = useState(null);
   const [video, setVideo] = useState(null);
+
+  // function for handling change
 
   const handleWardNoChange = (event) => {
     setWardNo(event.target.value);
@@ -32,10 +38,33 @@ const IssueForm = () => {
     setVideo(file);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
+    
+     // converting file to form data
+     const data=new FormData()
+     data.append("file",photo)
+     
+     // uploading to cloudinary
+     data.append("upload_preset","upload")
+
+     try{
+      const uploadRes=await axios.post("https://api.cloudinary.com/v1_1/dzv4luexe/image/upload",data)
+       const {url}=uploadRes.data 
+       console.log("url",url)
+     }
+     catch(err){
+         console.log(err)
+     }
+
+    const photoUrl="photourl";
+    
+    const damagedRoad={"name":wardNo,"damageType":issueType,"picture":photoUrl}
 
     // Perform submission logic here, e.g., send data to server
+
+    await axios.post("/road",damagedRoad)
+    console.log("Damaged road added successfully")
 
     // Reset form fields
     setWardNo('');
