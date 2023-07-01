@@ -6,11 +6,11 @@ const WardSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    road: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'roads'
+    road: {
+        type:String,
+        
     }
-    ],
+    ,
 })
 
 export default mongoose.model("Ward",WardSchema)

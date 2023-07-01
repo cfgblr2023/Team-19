@@ -62,9 +62,22 @@ const IssueForm = () => {
     const damagedRoad={"name":wardNo,"damageType":issueType,"picture":photoUrl}
 
     // Perform submission logic here, e.g., send data to server
+   
+    try{
+   const r= await axios.post("/road",damagedRoad)
+   console.log(r.data._id)
+   const rId=r.data._id
+   
 
-    await axios.post("/road",damagedRoad)
-    console.log("Damaged road added successfully")
+    // posting this data to individual ward
+
+    const ward=await axios.post("/ward",{name:wardNo,roadId:rId})
+
+    console.log(`Damaged road added successfully ${wardNo}`)
+    }
+    catch(err){
+      console.log(err)
+    }
 
     // Reset form fields
     setWardNo('');

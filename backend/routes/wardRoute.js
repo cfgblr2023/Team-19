@@ -1,11 +1,13 @@
 import express from "express"
-import {InsertWard, ViewWards} from "../controllers/wardCRUD.js"
+import {InsertWard, ViewWards, addToWard,getWardByName} from "../controllers/wardCRUD.js"
 
 
 const router = express.Router()
 
-router.post("/", InsertWard)
+router.post("/", addToWard)
 
-router.get("/", ViewWards)
+router.get("/", getWardByName)
+
+
 
 export default router
