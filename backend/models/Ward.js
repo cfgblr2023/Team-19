@@ -1,7 +1,7 @@
-import mongoose, { Mongoose } from "mongoose"
+import mongoose from "mongoose"
 
 
-const WardSchema = new Mongoose.Schema({
+const WardSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -9,7 +9,8 @@ const WardSchema = new Mongoose.Schema({
     road: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'roads'
-
     }
     ],
 })
+
+export default mongoose.model("Ward",WardSchema)
