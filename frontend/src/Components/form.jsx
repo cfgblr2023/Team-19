@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './form.css';
+import formNav from "./form-nav";
+import Navbar from './form-nav';
 
 const IssueForm = () => {
   const [wardNo, setWardNo] = useState('');
@@ -44,7 +46,13 @@ const IssueForm = () => {
   };
 
   return (
+    <div>
+    <div>
+      <Navbar />
+    </div>
+    <div className="outer-div">
     <form onSubmit={handleSubmit} className="issue-form">
+      <div className="form-heading"><h1>Issue Form</h1></div>
       <div className="form-group">
         <label htmlFor="wardNo">Ward No:</label>
         <input
@@ -86,6 +94,8 @@ const IssueForm = () => {
 
       <button type="submit" className="submit-button">Submit</button>
     </form>
+    </div>
+    </div>
   );
 };
 
