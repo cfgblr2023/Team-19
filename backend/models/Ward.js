@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 
-const WardSchema = new Mongoose.Schema({
+const WardSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
