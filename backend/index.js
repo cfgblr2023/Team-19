@@ -1,6 +1,9 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import authRoute from "./routes/userRoute.js"
+
+import roadRoute from "./routes/roads.js"
 
 const app =express()
 
@@ -20,6 +23,12 @@ catch(error){
 
 }
 
+// send json data
+app.use(express.json())
+
+app.use("/api/road",roadRoute)
+app.use(express.json())
+app.use('/api/auth', authRoute)
 
 
 // error handling middleware
