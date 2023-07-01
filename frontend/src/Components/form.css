@@ -1,4 +1,4 @@
-.issue-form {
+/* .issue-form {
     max-width: 400px;
     margin: 0 auto;
 }
@@ -42,4 +42,91 @@ select {
 
 .submit-button:active {
     background-color: #3e8e41;
+} */
+
+
+/* form.css */
+
+/* form.css */
+
+/* Make sure the parent container has a height defined */
+/* For example, if it's the body element */
+body {
+    height: 100vh; /* vh stands for viewport height */
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Set a background color for the entire page */
+  }
+  
+.outer-div {
+    display: block;
+    width: 50%;
+    margin: auto;
 }
+
+  .issue-form {
+    width: 100%; /* Set the width to occupy the entire container */
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-self:center ;
+    justify-content: center;
+    background-color: orange; /* Changed background color to orange */
+  }
+
+  .form-heading {
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    .issue-form {
+      max-width: 100%;
+    }
+  }
+  
+  
