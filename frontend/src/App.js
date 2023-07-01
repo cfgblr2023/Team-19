@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./Components/Home";
+// import Dashboard from "./Components/dashboard";
 import IssueForm from "./Components/form"
 import React from "react";
 import {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/form" element={<IssueForm/>} />
+        {/* <Route path="/dashboard" element={<Dashboard/>}></Route> */}
       </Routes>
       </BrowserRouter>
      
