@@ -34,7 +34,9 @@ app.use((err,req,res,next)=>{
     })
 })
 
-
+app.get("", (req, res)=>{
+      
+})
 
 
 // checking if mongodb is connected
@@ -51,4 +53,4 @@ mongoose.connection.on("connected",()=>{
 app.listen(8800,()=>{
     connect()
     console.log("Connected to backend.")
-})
+}) 
