@@ -1,5 +1,5 @@
 import express from "express"
-import { createRoad ,deleteRoad,getAllRoads} from "../controllers/road.js"
+import { createRoad ,deleteRoad,getAllRoads, getRoad} from "../controllers/road.js"
 
 const router=express.Router()
 
@@ -12,5 +12,8 @@ router.get("/",getAllRoads)
 
 // DELETE
 router.delete("/:id",deleteRoad)
+
+// Get Road by Id
+router.get("/:id",getRoad)
 
 export default router
