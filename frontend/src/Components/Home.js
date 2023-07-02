@@ -3,8 +3,15 @@ import BannerBackground from "../Assets/home-banner-background.png";
 import BannerImage from "../Assets/landingPageImage.jpg";
 import Navbar from "./Navbar";
 import { FiArrowRight } from "react-icons/fi";
+import { Navigate } from "react-router-dom";
+
 
 const Home = () => {
+  const handleClick=()=>{
+    console.log("IN");
+    //  return <Navigate to="/form" replace={true}/>
+    window.location.href = "/form"
+  }
   return (
     <div className="home-container">
       <Navbar />
@@ -19,7 +26,7 @@ const Home = () => {
           <p className="primary-text">
                The Objective of the initiative is to improve first and last-mile connectivity for public transport,modal shifts away from private vehicles,and improve accessibility.In turn,investing in Walkability has the benefits of reducing air pollution and improving road safety and well-being.
           </p>
-          <button className="secondary-button">
+          <button className="secondary-button" onClick={handleClick}>
             Next <FiArrowRight />{" "}
           </button>
         </div>

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Logo from "../Assets/Logo.svg";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
@@ -18,6 +18,15 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 const Navbar = () => {
+  const NavigateExternal = ({ to }) => {
+    useEffect(() => {
+      window.location.href = to;
+    }, []);
+    return null;
+  };
+  const handleClick=()=>{
+    // <NavigateExternal to="http://localhost:3001/" />
+  }
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
@@ -54,7 +63,7 @@ const Navbar = () => {
         {/* <a href="">
           <BsCart2 className="navbar-cart-icon" />
         </a> */}
-        <button className="primary-button">Login as Admin</button>
+        <button className="primary-button" onClick={handleClick}>Go to dashboard</button>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
