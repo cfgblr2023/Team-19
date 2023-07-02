@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post("/", addToWard)
 
-router.get("/", getWardByName)
+router.get("/", ViewWards)
 
 
 

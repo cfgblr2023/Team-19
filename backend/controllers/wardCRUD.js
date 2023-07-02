@@ -10,10 +10,12 @@ export const InsertWard = async(req, res)=>{
 
 export const ViewWards = async(req, res)=>{
     const w = await Ward.find()
-    console.log(w)
+    console.log(w.length)
+    const len=w.length
     // res.render("", {w})
     res.status(200).json({
-       w
+       w,
+       len
     })
 }
 
