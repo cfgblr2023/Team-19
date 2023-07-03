@@ -1,21 +1,24 @@
 {
-  "name": "landing-page-tutorial",
+  "name": "lamadmin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.4.4",
+    "@mui/material": "^5.4.4",
+    "@mui/x-data-grid": "^5.5.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-router-dom": "^6.14.1",
-    "react-scripts": "^1.1.5",
+    "react": "^17.0.2",
+    "react-circular-progressbar": "^2.0.4",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "recharts": "^2.1.9",
+    "sass": "^1.49.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -42,9 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:8800/api",
-  "description": "A simple landing page - first designed in figma and then coded in React. Hope you like it.",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
+  "proxy":"http://localhost:8800/api"
 }

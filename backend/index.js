@@ -2,8 +2,8 @@ import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/userRoute.js"
-
 import roadRoute from "./routes/roads.js"
+import wardRoute from "./routes/wardRoute.js"
 
 const app =express()
 
@@ -30,6 +30,9 @@ app.use("/api/road",roadRoute)
 app.use(express.json())
 app.use('/api/auth', authRoute)
 
+app.use(express.json())
+app.use("/api/ward", wardRoute)
+
 
 // error handling middleware
 app.use((err,req,res,next)=>{
@@ -43,7 +46,9 @@ app.use((err,req,res,next)=>{
     })
 })
 
-
+app.get("", (req, res)=>{
+      
+})
 
 
 // checking if mongodb is connected
@@ -60,4 +65,4 @@ mongoose.connection.on("connected",()=>{
 app.listen(8800,()=>{
     connect()
     console.log("Connected to backend.")
-})
+}) 

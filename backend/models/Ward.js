@@ -1,15 +1,16 @@
-import mongoose, { Mongoose } from "mongoose"
+import mongoose from "mongoose"
 
 
-const WardSchema = new Mongoose.Schema({
+const WardSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
     },
-    road: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'roads'
-
+    road: {
+        type:String,
+        
     }
-    ],
+    ,
 })
+
+export default mongoose.model("Ward",WardSchema)
